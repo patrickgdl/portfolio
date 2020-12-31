@@ -51,33 +51,29 @@ const theme = {
 export const { styled, css } = createStyled({
   tokens: theme,
   utils: {
-    marginX: () => (
-      value: keyof typeof theme['space'] | (string & unknown)
-    ) => ({
+    marginX: () => (value: keyof typeof theme['space'] | (string & unknown)) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    marginY: () => (
-      value: keyof typeof theme['space'] | (string & unknown)
-    ) => ({
+    marginY: () => (value: keyof typeof theme['space'] | (string & unknown)) => ({
       marginTop: value,
       marginBottom: value,
     }),
-    paddingX: () => (
-      value: keyof typeof theme['space'] | (string & unknown)
-    ) => ({
+    paddingX: () => (value: keyof typeof theme['space'] | (string & unknown)) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    paddingY: () => (
-      value: keyof typeof theme['space'] | (string & unknown)
-    ) => ({
+    paddingY: () => (value: keyof typeof theme['space'] | (string & unknown)) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
   },
   breakpoints: {
-    bp1: (rule) => `@media (min-width: 520px) { ${rule} }`,
-    bp2: (rule) => `@media (min-width: 900px) { ${rule} }`,
+    phoneSm: (rule) => `@media (min-width: 320px) { ${rule} }`,
+    phone: (rule) => `@media (min-width: 376px) { ${rule} }`,
+    phablet: (rule) => `@media (min-width: 540px) { ${rule} }`,
+    tablet: (rule) => `@media (min-width: 735px) { ${rule} }`,
+    desktopMd: (rule) => `@media (min-width: 1070px) { ${rule} }`,
+    desktopLg: (rule) => `@media (min-width: 1440px) { ${rule} }`,
   },
 })

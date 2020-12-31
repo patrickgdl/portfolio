@@ -1,51 +1,23 @@
 import Head from 'next/head'
-import { styled } from '../stitches.config'
 
-const Box = styled('div', {})
+import Container from '../components/Layout/Container'
+import NavigationHeader from '../components/Navigation/Navigation.Header'
+import Reset from '../components/Reset'
+import { css } from '../stitches.config'
 
-const Text = styled('p', {
-  fontFamily: '$system',
-  color: '$hiContrast',
-})
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+css.global(Reset)
 
-const Link = styled('a', {
-  fontFamily: '$system',
-  textDecoration: 'none',
-  color: '$purple600',
-})
-
-const Container = styled('div', {
-  marginX: 'auto',
-  paddingX: '$3',
-
-  variants: {
-    size: {
-      '1': {
-        maxWidth: '300px',
-      },
-      '2': {
-        maxWidth: '585px',
-      },
-      '3': {
-        maxWidth: '865px',
-      },
-    },
-  },
-})
-
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
-    <Box css={{ paddingY: '$6' }}>
+    <>
       <Head>
-        <title>Use Stitches with Next.js</title>
+        <title>Home</title>
       </Head>
-      <Container size={{ initial: '1', bp1: '2' }}>
-        <Text as="h1">Hello, from Stitches.</Text>
-        <Text>
-          For full documentation, visit{' '}
-          <Link href="https://stitches.dev">stitches.dev</Link>.
-        </Text>
+      <Container>
+        <NavigationHeader />
       </Container>
-    </Box>
+    </>
   )
 }
